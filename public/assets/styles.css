@@ -1,0 +1,13 @@
+#frm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+}
+h1 {
+  text-align: center;
+}
