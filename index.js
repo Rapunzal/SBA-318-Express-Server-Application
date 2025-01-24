@@ -2,6 +2,18 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+const authors = require("./routes/authors");
+const books = require("./routes/books");
+const genres = require("./routes/genres");
+
+const error = require("./utilities/error");
+
+// Parsing Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
+
+
+
 //EJS template engine
 app.set("view engine", "ejs");
 
