@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const authors = require("./routes/authors");
+const user = require("./routes/user");
 const books = require("./routes/books");
-const genres = require("./routes/genres");
+const category = require("./routes/category");
 const path = require("path");
 
 const app = express();
@@ -26,6 +26,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/books", books);
+app.use("/api/category", category);
+
 app.get("/", (req, res) => {
   let siteName = "Library Management System";
   let search = "Search Now";
