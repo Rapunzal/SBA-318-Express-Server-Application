@@ -10,9 +10,32 @@
     <h1><%= siteName %></h1>
     <div id="frm">
       <form method="post" action="/api/books/">
-        <input type="text" placeholder="name" name="name" /><br />
-        <input type="text" placeholder="type" name="type" /><br />
+        <legend>
+          <label>Book Title : </label>
+          <input type="text" placeholder="Book Title" name="title" />
+        </legend>
+        <legend>
+          <label>Author : </label>
+          <input type="text" placeholder="Book Author" name="author" />
+        </legend>
+        <legend>
+          <label>Description : </label>
+          <input type="text" placeholder="Description" name="description" />
+        </legend>
+
+        <label>Book Price: </label>
+        <input type="text" placeholder="Price" name="price" /><br />
+        <label>Book Genre : </label>
+        <input type="text" placeholder="Genre" name="category" /><br />
+        <label>Book ISBN : </label>
+        <input type="text" placeholder="Isbn" name="isbn" /><br />
+        <label>Book Publisher : </label>
+        <input type="text" placeholder="Publisher" name="publisher" /><br />
+        <label>Book Stock : </label>
+        <input type="text" placeholder="Stock" name="stock" /><br />
+        <label>Book Available : </label>
         <input type="text" placeholder="available" name="available" /><br />
+
         <input type="submit" value="Add Book" />
       </form>
     </div>

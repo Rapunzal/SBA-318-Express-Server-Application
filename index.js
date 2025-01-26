@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const user = require("./routes/user");
+const users = require("./routes/user");
 const books = require("./routes/books");
 const category = require("./routes/category");
 const path = require("path");
@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use("/api/books", books);
 app.use("/api/category", category);
+app.use("/api/users", users);
 
 app.get("/", (req, res) => {
   let siteName = "Library Management System";

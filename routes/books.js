@@ -46,14 +46,44 @@ router
     }
   });
 
+//Search by query parameter (title,author,category or isbn)
+router.get("/search", (req, res, next) => {
+  const { title, author, category, isbn } = req.query;
+  let bookList;
+  if (title) {
+    bookList = books.filter((book) => book.title == title);
+  }
+  if (author) {
+    bookList = books.filter(
+      (book) => book.author.toLowerCase() == author.toLowerCase()
+    );
+  }
+  if (category) {
+    bookList = books.filter(
+      (book) => book.category.toLowerCase() == category.toLowerCase()
+    );
+  }
+  if (isbn) {
+    bookList = books.filter((book) => book.isbn == isbn);
+  }
+
+  console.log(bookList);
+  if (bookList.length > 0) {
+    res.json(bookList);
+  } else {
+    next(error(400, "Cannot find books"));
+  }
+  console.log(req.query.isbn);
+});
+
 router
   .route("/:id")
   .get((req, res, next) => {
     const book = books.find((b) => {
-      console.log(b, " ", req.params.id);
+      //console.log(b, " ", req.params.id);
       return b.id === Number(req.params.id);
     });
-    console.log(book, "books");
+
     if (book) res.json({ book });
     else next();
   })
@@ -80,6 +110,25 @@ router
 
     if (book) res.json(book);
     else next();
+  })
+  .put((req, res, next) => {
+    const bookId = parseInt(req.params.id);
+    const updatedBook = req.body;
+
+    const book = books.find((b, index) => {
+      if (b.id === bookId) {
+        books[index] = {
+          id: bookId,
+          ...updatedBook,
+        };
+        return true;
+      }
+    });
+    if (book) {
+      res.json(updatedBook);
+    } else {
+      next(error(400, " message: 'Book not found'"));
+    }
   });
 
 module.exports = router;
