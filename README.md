@@ -25,3 +25,15 @@
 - Implemented EJS as view engine to display template, rendered list of books,users and category via template.
 - Implemented forms in ejs for post request handling to add book as well as register user.
 - Implemented multer third party package to upload file.
+
+## Output
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-2.png)
+
+![alt text](image.png)
+
+![alt text](image-1.png)
