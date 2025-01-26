@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Display Books</title>
+    <title>Display Category</title>
     <link rel="stylesheet" href="/static/assets/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,33 +16,18 @@
     <header>
       <h1>Library Management System</h1>
     </header>
-    <h1 style="color: black">Books List</h1>
-    <div class="tblBook">
+    <h1 style="color: black">Category List</h1>
+    <div class="tblCategory">
       <table>
         <tr>
-          <th>Title</th>
-          <th>Author</th>
+          <th>Name</th>
+
           <th>Description</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>ISBN</th>
-          <th>Publisher</th>
-          <th>Stock</th>
-          <th>Rating</th>
-          <th>Review Count</th>
         </tr>
-        <%for (let x of bookList){%>
+        <%for (let x of categoryList){%>
         <tr>
-          <td><%= x.title %></td>
-          <td><%= x.author %></td>
+          <td><%= x.name %></td>
           <td><%= x.description %></td>
-          <td><%= x.price %></td>
-          <td><%= x.category %></td>
-          <td><%= x.isbn %></td>
-          <td><%= x.publisher %></td>
-          <td><%= x.stock %></td>
-          <td><%= x.rating %></td>
-          <td><%= x.reviews_count %></td>
 
           <% } %>
         </tr>

@@ -48,11 +48,10 @@ app.use("/api/books", books);
 app.use("/api/category", category);
 app.use("/api/users", users);
 
+//to render a add book template for making post request using form
 app.get("/", (req, res) => {
   let siteName = "Library Management System";
-  let search = "Search Now";
-  let arr = [1, 2, 3, 4, 5, 6];
-  res.render("index", { siteName: siteName, content: search }); //to render a view template
+  res.render("index", { siteName: siteName });
 });
 
 // Adding some HATEOAS links.

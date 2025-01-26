@@ -10,6 +10,7 @@ router
     res.json(users);
   })
   .post((req, res, next) => {
+    console.log(req.body);
     if (
       req.body.first_name &&
       req.body.last_name &&
@@ -35,13 +36,25 @@ router
         postalCode: req.body.address.postal_code,
         country: req.body.address.country,
       };
+
       users.push(user);
       res.json(users[users.length - 1]);
     } else next();
   });
 
+//Render list of all users via ejs template to demonstrate rendering
 router.route("/displayUser").get((req, res) => {
   res.render("displayUser", { userList: users });
+});
+
+//Register user via POST request through ejs template
+router.route("/registerUser").get((req, res, next) => {
+  res.render("registerUser");
+});
+
+// Route to match usernames with letters and numbers
+router.get("/search/:username([a-zA-Z0-9]+)", (req, res) => {
+  res.send(`User Profile: ${req.params.username}`);
 });
 
 router

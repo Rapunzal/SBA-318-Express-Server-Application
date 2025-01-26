@@ -21,6 +21,10 @@ router
     } else next(error(400, "Insufficient Data"));
   });
 
+router.route("/displayCategory").get((req, res) => {
+  res.render("displayCategory", { categoryList: categories });
+});
+
 router
   .route("/:id")
   .get((req, res, next) => {

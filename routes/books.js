@@ -48,7 +48,7 @@ router
     }
   });
 
-//upload file using multer package
+//upload file using multer package tested through Postman
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -65,7 +65,7 @@ router.post("/upload", upload.single("file"), (req, res) => {
   res.json(req.file);
 });
 
-//Render Books
+//Render Books via ejs to display list of books
 router.route("/displayBooks").get((req, res) => {
   res.render("displayBooks", { bookList: books });
 });

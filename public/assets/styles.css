@@ -11,15 +11,18 @@ footer {
 }
 h1 {
   text-align: center;
+  color: gray;
 }
 #footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: gray;
 }
 header {
   background-color: lightblue;
-  padding: 10px;
+  padding: 1px;
+  box-shadow: 2px 2px 6px lightgrey;
 }
 body {
   margin: 0px;
@@ -54,4 +57,42 @@ th {
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;
+}
+
+.inter {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+label {
+  padding: 10px;
+  margin: 5px;
+}
+input {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid gray;
+}
+.addBookBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+form label {
+  display: inline-block;
+  width: 150px;
+}
+.addBookBtn input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: gray;
+}
+.tblCategory {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.tblCategory table {
+  border-collapse: collapse;
 }
