@@ -155,4 +155,8 @@ router
     }
   });
 
+router.get("/books/*", (req, res) => {
+  res.send(`Matched route: ${req.originalUrl}`);
+});
+
 module.exports = router;

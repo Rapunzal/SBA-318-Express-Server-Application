@@ -55,6 +55,44 @@ app.get("/", (req, res) => {
   res.render("index", { siteName: siteName, content: search }); //to render a view template
 });
 
+// Adding some HATEOAS links.
+app.get("/api", (req, res) => {
+  res.json({
+    links: [
+      {
+        href: "api/users",
+        rel: "users",
+        type: "GET",
+      },
+      {
+        href: "api/users",
+        rel: "users",
+        type: "POST",
+      },
+      {
+        href: "api/books",
+        rel: "books",
+        type: "GET",
+      },
+      {
+        href: "api/books",
+        rel: "books",
+        type: "POST",
+      },
+      {
+        href: "api/category",
+        rel: "category",
+        type: "GET",
+      },
+      {
+        href: "api/category",
+        rel: "category",
+        type: "POST",
+      },
+    ],
+  });
+});
+
 //Error handling middleware
 app.use((err, req, res, next) => {
   console.log(err.stack);
