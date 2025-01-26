@@ -1,4 +1,6 @@
 const express = require("express");
+const morgan = require("morgan");
+
 const bodyParser = require("body-parser");
 const users = require("./routes/user");
 const books = require("./routes/books");
@@ -18,7 +20,10 @@ app.use(bodyParser.json({ extended: true }));
 //EJS template engine
 app.set("view engine", "ejs");
 
-//Logging
+//Third part package morgan
+app.use(morgan("dev"));
+
+//custom Logging
 app.use((req, res, next) => {
   req.time = new Date(Date.now()).toString();
   console.log(req.method, req.hostname, req.path, req.time);
