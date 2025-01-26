@@ -89,4 +89,15 @@ router
     else next();
   });
 
+router.route("/delete/:id").delete((req, res, next) => {
+  const user = users.find((u, index) => {
+    if (u.id == req.params.id) {
+      users.splice(index, 1);
+      return true;
+    }
+  });
+  if (user) return res.json(user);
+  else next();
+});
+
 module.exports = router;
