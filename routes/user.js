@@ -38,7 +38,7 @@ router
       };
 
       users.push(user);
-      res.json(users[users.length - 1]);
+      res.status(201).json(users[users.length - 1]);
     } else next();
   });
 

@@ -1,0 +1,12 @@
+GET localhost /api/users Sun Jan 26 2025 16:12:13 GMT-0700 (Mountain Standard Time) 2025-01-26T23:12:13.927Z
+GET localhost /api/users Sun Jan 26 2025 16:12:48 GMT-0700 (Mountain Standard Time) 2025-01-26T23:12:48.481Z
+GET localhost /api/category/displayCategory Sun Jan 26 2025 16:21:21 GMT-0700 (Mountain Standard Time) 2025-01-26T23:21:21.923Z
+GET localhost /api/category/displayCategory2 Sun Jan 26 2025 16:21:30 GMT-0700 (Mountain Standard Time) 2025-01-26T23:21:30.878Z
+GET localhost /api/category/displayCategory2 Sun Jan 26 2025 16:22:24 GMT-0700 (Mountain Standard Time) 2025-01-26T23:22:24.853Z
+GET localhost /api/category/displayCategory2 Sun Jan 26 2025 16:22:35 GMT-0700 (Mountain Standard Time) 2025-01-26T23:22:35.517Z
+GET localhost /api/category/displayCategory2 Sun Jan 26 2025 16:23:24 GMT-0700 (Mountain Standard Time) 2025-01-26T23:23:24.419Z
+GET localhost /api/category/displayCategory2 Sun Jan 26 2025 16:23:46 GMT-0700 (Mountain Standard Time) 2025-01-26T23:23:46.337Z
+GET localhost /error Sun Jan 26 2025 16:25:25 GMT-0700 (Mountain Standard Time) 2025-01-26T23:25:25.031Z
+GET localhost /api/books Sun Jan 26 2025 16:27:46 GMT-0700 (Mountain Standard Time) 2025-01-26T23:27:46.371Z
+GET localhost /api/books/displayBooks Sun Jan 26 2025 16:27:55 GMT-0700 (Mountain Standard Time) 2025-01-26T23:27:55.734Z
+GET localhost /api/books/jnk Sun Jan 26 2025 16:28:00 GMT-0700 (Mountain Standard Time) 2025-01-26T23:28:00.942Z

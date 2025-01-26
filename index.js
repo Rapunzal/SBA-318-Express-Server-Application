@@ -6,11 +6,13 @@ const users = require("./routes/user");
 const books = require("./routes/books");
 const category = require("./routes/category");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const port = 3000;
 const error = require("./utilities/error");
 
+//Virtual Path Prefix
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 // Parsing Middleware
@@ -27,7 +29,17 @@ app.use(morgan("dev"));
 //Custom Logging middleware
 app.use((req, res, next) => {
   req.time = new Date(Date.now()).toString();
-  console.log(req.method, req.hostname, req.path, req.time);
+  const log = `${req.method} ${req.hostname} ${req.path} ${
+    req.time
+  } ${new Date().toISOString()}\n`;
+  next();
+
+  fs.appendFile(path.join(__dirname, "access.log"), log, (err) => {
+    if (err) {
+      console.error("Failed to log error to file");
+    }
+  });
+  console.log(log);
   next();
 });
 
@@ -91,10 +103,23 @@ app.get("/api", (req, res) => {
     ],
   });
 });
-
+// // For invalid routes
+// app.get("*", (req, res) => {
+//   res.send("404! This is an invalid URL.");
+// });
 //Error handling middleware
 app.use((err, req, res, next) => {
   console.log(err.stack);
+  const errorLog = `${err.stack} - ${new Date().toISOString()}\n`;
+  //writing error log to file
+  fs.appendFile(path.join(__dirname, "error.log"), errorLog, (err) => {
+    if (err) {
+      console.error("Failed to write error to file");
+    }
+  });
+
+  console.error(errorLog);
+  // res.status(500).send("Internal Server Error");
 
   res.status(500).json({
     error: {

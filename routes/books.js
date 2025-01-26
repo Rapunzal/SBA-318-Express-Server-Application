@@ -42,7 +42,7 @@ router
       console.log(book, " ====book");
       books.push(book);
 
-      res.json(books[books.length - 1]);
+      res.status(201).json(books[books.length - 1]);
     } else {
       next(error(400, "Insufficient Data"));
     }
