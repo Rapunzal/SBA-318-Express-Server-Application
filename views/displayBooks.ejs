@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Books</title>
+    <link rel="stylesheet" href="/static/assets/styles.css" />
+  </head>
+  <body>
+    <h1>Books List</h1>
+    <div class="tblBook">
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>ISBN</th>
+          <th>Publisher</th>
+          <th>Stock</th>
+          <th>Rating</th>
+          <th>Review Count</th>
+        </tr>
+        <%for (let x of bookList){%>
+        <tr>
+          <td><%= x.title %></td>
+          <td><%= x.author %></td>
+          <td><%= x.description %></td>
+          <td><%= x.price %></td>
+          <td><%= x.category %></td>
+          <td><%= x.isbn %></td>
+          <td><%= x.publisher %></td>
+          <td><%= x.stock %></td>
+          <td><%= x.rating %></td>
+          <td><%= x.reviews_count %></td>
+
+          <% } %>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

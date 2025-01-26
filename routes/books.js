@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const multer = require("multer");
+// const upload = multer({ dest: "public/data/uploads/" });
 
 const books = require("../data/books");
 const error = require("../utilities/error");
@@ -45,6 +47,28 @@ router
       next(error(400, "Insufficient Data"));
     }
   });
+
+//upload file using multer package
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/data/uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+router.post("/upload", upload.single("file"), (req, res) => {
+  res.json(req.file);
+});
+
+//Render Books
+router.route("/displayBooks").get((req, res) => {
+  res.render("displayBooks", { bookList: books });
+});
 
 //Search by query parameter (title,author,category or isbn)
 router.get("/search", (req, res, next) => {

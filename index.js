@@ -19,16 +19,30 @@ app.use(bodyParser.json({ extended: true }));
 
 //EJS template engine
 app.set("view engine", "ejs");
+//app.set("views", path.join(__dirname, "views"));
 
-//Third part package morgan
+//Third part package morgan middleware for logging
 app.use(morgan("dev"));
 
-//custom Logging
+//Custom Logging middleware
 app.use((req, res, next) => {
   req.time = new Date(Date.now()).toString();
   console.log(req.method, req.hostname, req.path, req.time);
   next();
 });
+
+// Custom middleware sub-stack that prints request info for any type of HTTP request on this path
+app.use(
+  "/api/books/:id",
+  (req, res, next) => {
+    console.log("Request URL:", req.originalUrl);
+    next();
+  },
+  (req, res, next) => {
+    console.log("Request Type:", req.method);
+    next();
+  }
+);
 
 app.use("/api/books", books);
 app.use("/api/category", category);

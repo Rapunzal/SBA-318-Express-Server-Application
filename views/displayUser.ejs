@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display User</title>
+    <link rel="stylesheet" href="/static/assets/styles.css" />
+  </head>
+  <body>
+    <h1>Users List</h1>
+    <div class="tbl">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Postal Code</th>
+          <th>Country</th>
+        </tr>
+        <%for (let x of userList){%>
+        <tr>
+          <td><%= x.first_name %></td>
+          <td><%= x.last_name %></td>
+          <td><%= x.email %></td>
+          <td><%= x.phone %></td>
+          <td><%= x.address.street %></td>
+          <td><%= x.address.city %></td>
+          <td><%= x.address.state %></td>
+          <td><%= x.address.postal_code %></td>
+          <td><%= x.address.country %> <% } %></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

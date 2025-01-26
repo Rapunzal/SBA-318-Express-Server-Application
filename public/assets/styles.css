@@ -7,7 +7,51 @@
 footer {
   position: absolute;
   bottom: 0;
+  height: 2.5rem;
 }
 h1 {
+  text-align: center;
+}
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  background-color: lightblue;
+  padding: 10px;
+}
+body {
+  margin: 0px;
+}
+.tbl table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 20px;
+}
+.tbl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+tblBook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+.tblBook table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 8px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
 }

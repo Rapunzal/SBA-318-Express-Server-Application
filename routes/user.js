@@ -40,6 +40,10 @@ router
     } else next();
   });
 
+router.route("/displayUser").get((req, res) => {
+  res.render("displayUser", { userList: users });
+});
+
 router
   .route("/:id")
   .get((req, res, next) => {
