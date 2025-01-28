@@ -10,7 +10,7 @@ router
     res.json(users);
   })
   .post((req, res, next) => {
-    console.log(req.body);
+    console.log(req.body.phone, "========");
     if (
       req.body.first_name &&
       req.body.last_name &&
@@ -23,6 +23,7 @@ router
       req.body.address.postal_code &&
       req.body.address.country
     ) {
+      console.log(req.body);
       const user = {
         id: users[users.length - 1].id + 1,
         first_name: req.body.first_name,

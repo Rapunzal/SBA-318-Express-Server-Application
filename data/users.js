@@ -6,6 +6,7 @@ const users = [
     email: "johndoe@example.com",
     password_hash: "$2b$10$e...hash...",
     phone: "+1-234-567-8901",
+    phone: ["+1-234-567-8901", "+1-234-567-8903"],
     address: {
       street: "123 Main St",
       city: "New York",
@@ -23,7 +24,7 @@ const users = [
     last_name: "Smith",
     email: "alicesmith@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8902",
+    phone: ["+1-234-567-8902", "+1-234-567-8902"],
     address: {
       street: "456 Oak St",
       city: "Los Angeles",
@@ -41,7 +42,7 @@ const users = [
     last_name: "Johnson",
     email: "bobjohnson@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8903",
+    phone: ["+1-234-567-8903", "+1-234-567-8903"],
     address: {
       street: "789 Pine St",
       city: "Chicago",
@@ -59,7 +60,7 @@ const users = [
     last_name: "Lee",
     email: "sarahlee@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8904",
+    phone: ["+1-234-567-8904", "+1-234-567-8904"],
     address: {
       street: "321 Birch St",
       city: "San Francisco",
@@ -77,7 +78,7 @@ const users = [
     last_name: "Brown",
     email: "davidbrown@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8905",
+    phone: ["+1-234-567-8905", "+1-234-567-8905"],
     address: {
       street: "654 Maple St",
       city: "Miami",
@@ -96,7 +97,7 @@ const users = [
     last_name: "Wilson",
     email: "emmawilson@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8906",
+    phone: ["+1-234-567-8906", "+1-234-567-8906"],
     address: {
       street: "987 Cedar St",
       city: "Seattle",
@@ -114,7 +115,7 @@ const users = [
     last_name: "Harris",
     email: "michaelharris@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8907",
+    phone: ["+1-234-567-8907", "+1-234-567-8907"],
     address: {
       street: "112 Elm St",
       city: "Austin",
@@ -132,7 +133,7 @@ const users = [
     last_name: "Martinez",
     email: "oliviamartinez@example.com",
     password_hash: "$2b$10$e...hash...",
-    phone: "+1-234-567-8908",
+    phone: ["+1-234-567-8908", "+1-234-567-8908"],
     address: {
       street: "223 Maple St",
       city: "Phoenix",
